@@ -7,6 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+generator nestjsDto {
+provider = "prisma-generator-nestjs-dto"
+output = "../src"
+outputToNestJsResourceStructure = "true"
+}
+
 model Bashar {
   id          Int       @id @default(autoincrement())
   name        String    @db.VarChar(255)

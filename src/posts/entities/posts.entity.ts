@@ -1,5 +1,5 @@
-import { Comments } from 'src/comments/entities/comments.entity';
-import { Users } from 'src/users/entities/users.entity';
+import { Comments } from '../../comments/entities/comments.entity';
+import { Users } from '../../users/entities/users.entity';
 
 export class Posts {
   id: number;
@@ -8,7 +8,7 @@ export class Posts {
   userId: number;
   createdAt: Date;
   updatedAt: Date;
-  category: string;
-  Comments: Comments[];
-  Users: Users;
+  category: string | null;
+  Comments?: Comments[];
+  Users?: Users;
 }

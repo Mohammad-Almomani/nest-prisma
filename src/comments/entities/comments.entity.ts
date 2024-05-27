@@ -1,5 +1,6 @@
-import { Posts } from 'src/posts/entities/posts.entity';
-import { Users } from 'src/users/entities/users.entity';
+import { Prisma } from '@prisma/client';
+import { Posts } from '../../posts/entities/posts.entity';
+import { Users } from '../../users/entities/users.entity';
 
 export class Comments {
   id: number;
@@ -8,7 +9,7 @@ export class Comments {
   userId: number;
   createdAt: Date;
   updatedAt: Date;
-  meta_tags: any;
-  Posts: Posts;
-  Users: Users;
+  meta_tags: Prisma.JsonValue | null;
+  Posts?: Posts;
+  Users?: Users;
 }

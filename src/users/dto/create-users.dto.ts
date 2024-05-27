@@ -1,10 +1,7 @@
-export class User {
-  id: number;
+export class CreateUsersDto {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber: string;
-  username: string;
   createdAt: Date;
   updatedAt: Date;
   city?: string;

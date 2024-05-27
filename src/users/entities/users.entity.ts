@@ -1,5 +1,5 @@
-import { Comments } from 'src/comments/entities/comments.entity';
-import { Posts } from 'src/posts/entities/posts.entity';
+import { Comments } from '../../comments/entities/comments.entity';
+import { Posts } from '../../posts/entities/posts.entity';
 
 export class Users {
   id: number;
@@ -10,7 +10,7 @@ export class Users {
   username: string;
   createdAt: Date;
   updatedAt: Date;
-  city: string;
-  Comments: Comments[];
-  Posts: Posts[];
+  city: string | null;
+  Comments?: Comments[];
+  Posts?: Posts[];
 }
