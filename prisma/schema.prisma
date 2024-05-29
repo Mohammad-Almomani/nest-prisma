@@ -2,15 +2,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator nestjsDto {
+  provider                        = "prisma-generator-nestjs-dto"
+  output                          = "../src"
+  outputToNestJsResourceStructure = "true"
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-}
-
-generator nestjsDto {
-provider = "prisma-generator-nestjs-dto"
-output = "../src"
-outputToNestJsResourceStructure = "true"
 }
 
 model Bashar {
@@ -45,12 +45,12 @@ model Posts {
   createdAt DateTime   @db.DateTime(0)
   updatedAt DateTime   @db.DateTime(0)
   category  String?
+  mig_test  String?    @db.VarChar(255)
   Comments  Comments[]
   Users     Users      @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Posts_ibfk_1")
 
   @@index([userId], map: "userId")
 }
-
 
 model Users {
   id          Int        @id @default(autoincrement())
@@ -66,4 +66,12 @@ model Users {
   Posts       Posts[]
 
   @@index([lastName], map: "idx_lastName")
+}
+
+
+model Profile {
+  id     Int     @id @default(autoincrement())
+  bio    String?
+  firstName   String     @db.VarChar(255)
+  userId Int     @unique
 }
