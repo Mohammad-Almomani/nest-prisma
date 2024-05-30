@@ -7,6 +7,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { BasharModule } from './bashar/bashar.module';
 import { CommentsModule } from './comments/comments.module';
 import { PostsModule } from './posts/posts.module';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { PostsModule } from './posts/posts.module';
     BasharModule,
     CommentsModule,
     PostsModule,
+    ProfileModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],

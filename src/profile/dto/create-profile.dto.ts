@@ -1,11 +1,5 @@
-
-
-
-
-
-
 export class CreateProfileDto {
   bio?: string;
-firstName: string;
-userId: number;
+  firstName: string;
+  userId: number;
 }

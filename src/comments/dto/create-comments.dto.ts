@@ -1,12 +1,9 @@
-
-import {Prisma} from '@prisma/client'
-
-
-
+import { Prisma } from '@prisma/client';
 
 export class CreateCommentsDto {
   content: string;
-createdAt: Date;
-updatedAt: Date;
-meta_tags?: Prisma.InputJsonValue;
+  createdAt: Date;
+  updatedAt: Date;
+  meta_tags?: Prisma.InputJsonValue;
+  newColumn2?: string;
 }

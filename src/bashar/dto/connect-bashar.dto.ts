@@ -1,6 +1,4 @@
-
-  export class ConnectBasharDto {
-    id?: number;
-email?: string;
-  }
-  
+export class ConnectBasharDto {
+  id?: number;
+  email?: string;
+}

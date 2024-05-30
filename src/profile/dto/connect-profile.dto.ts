@@ -1,6 +1,4 @@
-
-  export class ConnectProfileDto {
-    id?: number;
-userId?: number;
-  }
-  
+export class ConnectProfileDto {
+  id?: number;
+  userId?: number;
+}

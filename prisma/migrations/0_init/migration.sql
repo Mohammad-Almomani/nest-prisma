@@ -35,6 +35,7 @@ CREATE TABLE `Posts` (
     `createdAt` DATETIME(0) NOT NULL,
     `updatedAt` DATETIME(0) NOT NULL,
     `category` VARCHAR(191) NULL,
+    `mig_test` VARCHAR(255) NULL,
 
     INDEX `userId`(`userId`),
     PRIMARY KEY (`id`)
@@ -51,9 +52,21 @@ CREATE TABLE `Users` (
     `createdAt` DATETIME(0) NOT NULL,
     `updatedAt` DATETIME(0) NOT NULL,
     `city` VARCHAR(255) NULL DEFAULT '',
+    `newColumn` VARCHAR(255) NULL,
 
     UNIQUE INDEX `email`(`email`),
     INDEX `idx_lastName`(`lastName`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Profile` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `bio` VARCHAR(191) NULL,
+    `firstName` VARCHAR(255) NOT NULL,
+    `userId` INTEGER NOT NULL,
+
+    UNIQUE INDEX `Profile_userId_key`(`userId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

@@ -1,1 +1,0 @@
-ALTER TABLE `Posts` ADD COLUMN `mig_test` VARCHAR(255);

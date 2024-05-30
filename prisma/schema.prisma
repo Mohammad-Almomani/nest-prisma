@@ -23,15 +23,16 @@ model Bashar {
 }
 
 model Comments {
-  id        Int      @id @default(autoincrement())
-  content   String   @db.Text
-  postId    Int
-  userId    Int
-  createdAt DateTime @db.DateTime(0)
-  updatedAt DateTime @db.DateTime(0)
-  meta_tags Json?
-  Posts     Posts    @relation(fields: [postId], references: [id], onDelete: Cascade, map: "Comments_ibfk_1")
-  Users     Users    @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Comments_ibfk_2")
+  id         Int      @id @default(autoincrement())
+  content    String   @db.Text
+  postId     Int
+  userId     Int
+  createdAt  DateTime @db.DateTime(0)
+  updatedAt  DateTime @db.DateTime(0)
+  meta_tags  Json?
+  newColumn2 String?  @db.VarChar(255)
+  Posts      Posts    @relation(fields: [postId], references: [id], onDelete: Cascade, map: "Comments_ibfk_1")
+  Users      Users    @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Comments_ibfk_2")
 
   @@index([postId], map: "postId")
   @@index([userId], map: "userId")
@@ -62,16 +63,16 @@ model Users {
   createdAt   DateTime   @db.DateTime(0)
   updatedAt   DateTime   @db.DateTime(0)
   city        String?    @default("") @db.VarChar(255)
+  newColumn   String?    @db.VarChar(255)
   Comments    Comments[]
   Posts       Posts[]
 
   @@index([lastName], map: "idx_lastName")
 }
 
-
 model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  firstName   String     @db.VarChar(255)
-  userId Int     @unique
+  id        Int     @id @default(autoincrement())
+  bio       String?
+  firstName String  @db.VarChar(255)
+  userId    Int     @unique
 }

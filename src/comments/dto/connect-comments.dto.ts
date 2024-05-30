@@ -1,5 +1,3 @@
-
-  export class ConnectCommentsDto {
-    id: number;
-  }
-  
+export class ConnectCommentsDto {
+  id: number;
+}
