@@ -6,4 +6,5 @@ export class UpdateCommentsDto {
   updatedAt?: Date;
   meta_tags?: Prisma.InputJsonValue;
   newColumn2?: string;
+  newColumn20?: string;
 }

@@ -20,6 +20,7 @@ CREATE TABLE `Comments` (
     `createdAt` DATETIME(0) NOT NULL,
     `updatedAt` DATETIME(0) NOT NULL,
     `meta_tags` JSON NULL,
+    `newColumn2` VARCHAR(255) NULL,
 
     INDEX `postId`(`postId`),
     INDEX `userId`(`userId`),

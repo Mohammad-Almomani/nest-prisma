@@ -12,6 +12,9 @@ export class Users {
   updatedAt: Date;
   city: string | null;
   newColumn: string | null;
+  newColumn90: string | null;
+  newColumn560: string | null;
+  newColumn860: string | null;
   Comments?: Comments[];
   Posts?: Posts[];
 }

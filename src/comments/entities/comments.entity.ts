@@ -11,6 +11,7 @@ export class Comments {
   updatedAt: Date;
   meta_tags: Prisma.JsonValue | null;
   newColumn2: string | null;
+  newColumn20: string | null;
   Posts?: Posts;
   Users?: Users;
 }

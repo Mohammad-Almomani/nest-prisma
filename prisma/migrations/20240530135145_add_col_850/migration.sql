@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `Posts` ADD COLUMN `newColumn654` VARCHAR(255) NULL;
+
+-- AlterTable
+ALTER TABLE `Users` ADD COLUMN `newColumn860` VARCHAR(255) NULL;

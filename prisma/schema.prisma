@@ -23,49 +23,59 @@ model Bashar {
 }
 
 model Comments {
-  id         Int      @id @default(autoincrement())
-  content    String   @db.Text
-  postId     Int
-  userId     Int
-  createdAt  DateTime @db.DateTime(0)
-  updatedAt  DateTime @db.DateTime(0)
-  meta_tags  Json?
-  newColumn2 String?  @db.VarChar(255)
-  Posts      Posts    @relation(fields: [postId], references: [id], onDelete: Cascade, map: "Comments_ibfk_1")
-  Users      Users    @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Comments_ibfk_2")
+  id          Int      @id @default(autoincrement())
+  content     String   @db.Text
+  postId      Int
+  userId      Int
+  createdAt   DateTime @db.DateTime(0)
+  updatedAt   DateTime @db.DateTime(0)
+  meta_tags   Json?
+  newColumn2  String?  @db.VarChar(255)
+  newColumn20 String?  @db.VarChar(255)
+  Posts       Posts    @relation(fields: [postId], references: [id], onDelete: Cascade, map: "Comments_ibfk_1")
+  Users       Users    @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Comments_ibfk_2")
 
   @@index([postId], map: "postId")
   @@index([userId], map: "userId")
 }
 
 model Posts {
-  id        Int        @id @default(autoincrement())
-  title     String     @db.VarChar(255)
-  content   String     @db.Text
-  userId    Int
-  createdAt DateTime   @db.DateTime(0)
-  updatedAt DateTime   @db.DateTime(0)
-  category  String?
-  mig_test  String?    @db.VarChar(255)
-  Comments  Comments[]
-  Users     Users      @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Posts_ibfk_1")
+  id           Int        @id @default(autoincrement())
+  title        String     @db.VarChar(255)
+  content      String     @db.Text
+  userId       Int
+  createdAt    DateTime   @db.DateTime(0)
+  updatedAt    DateTime   @db.DateTime(0)
+  category     String?
+  mig_test     String?    @db.VarChar(255)
+  newColumn50  String?    @db.VarChar(255)
+  newColumn800 String?    @db.VarChar(255)
+  newColumn900 String?    @db.VarChar(255)
+  newColumn654 String?    @db.VarChar(255)
+  oldColumn1   String?    @db.VarChar(255)
+  oldColumn2   String?    @db.VarChar(255)
+  Comments     Comments[]
+  Users        Users      @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Posts_ibfk_1")
 
   @@index([userId], map: "userId")
 }
 
 model Users {
-  id          Int        @id @default(autoincrement())
-  firstName   String     @db.VarChar(255)
-  lastName    String     @db.VarChar(255)
-  email       String     @unique(map: "email") @db.VarChar(255)
-  phoneNumber String     @default("0123456789") @db.VarChar(255)
-  username    String     @default("") @db.VarChar(255)
-  createdAt   DateTime   @db.DateTime(0)
-  updatedAt   DateTime   @db.DateTime(0)
-  city        String?    @default("") @db.VarChar(255)
-  newColumn   String?    @db.VarChar(255)
-  Comments    Comments[]
-  Posts       Posts[]
+  id           Int        @id @default(autoincrement())
+  firstName    String     @db.VarChar(255)
+  lastName     String     @db.VarChar(255)
+  email        String     @unique(map: "email") @db.VarChar(255)
+  phoneNumber  String     @default("0123456789") @db.VarChar(255)
+  username     String     @default("") @db.VarChar(255)
+  createdAt    DateTime   @db.DateTime(0)
+  updatedAt    DateTime   @db.DateTime(0)
+  city         String?    @default("") @db.VarChar(255)
+  newColumn    String?    @db.VarChar(255)
+  newColumn90  String?    @db.VarChar(255)
+  newColumn560 String?    @db.VarChar(255)
+  newColumn860 String?    @db.VarChar(255)
+  Comments     Comments[]
+  Posts        Posts[]
 
   @@index([lastName], map: "idx_lastName")
 }
